@@ -14,7 +14,7 @@ const createAccountSchema = z.object({
 
 type CreateAccountSchema = z.infer<typeof createAccountSchema>;
 
-@Controller("/account")
+@Controller("/accounts")
 export class CreateAccountController {
   //como esse controller vai utilizar do prisma entao devo chamar no contructor da class
   constructor(private prisma: PrismaService) {}
