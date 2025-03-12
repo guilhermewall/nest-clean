@@ -1,10 +1,10 @@
 import { HttpException, UsePipes } from "@nestjs/common";
 import { HttpStatus } from "@nestjs/common";
 import { Body, Controller, HttpCode, Post } from "@nestjs/common";
-import { PrismaService } from "src/prisma/prisma.service";
+import { PrismaService } from "@/prisma/prisma.service";
 import { hash } from "bcryptjs";
 import { z } from "zod";
-import { ZodValidationPipe } from "src/pipes/zod-validation-pipe";
+import { ZodValidationPipe } from "@/pipes/zod-validation-pipe";
 
 const createAccountSchema = z.object({
   name: z.string().min(3),
@@ -55,7 +55,7 @@ export class CreateAccountController {
       user: {
         name,
         email,
-      }
-    }
+      },
+    };
   }
 }
