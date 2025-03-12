@@ -49,5 +49,13 @@ export class CreateAccountController {
     });
 
     console.log(body);
+
+    return {
+      message: "User created successfully.",
+      user: {
+        name,
+        email,
+      }
+    }
   }
 }
